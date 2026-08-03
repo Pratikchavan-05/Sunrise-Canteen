@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Canteen Feedback</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="top-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+    <a href="how-it-works.html" class="nav-link">How It Works</a>
+    <button id="themeToggle" class="theme-btn">Dark Mode</button>
+  </nav>
+  <h2 style="color:#fff; text-align:center; margin: 10px 0 20px;">🌟 Sunrise Canteen</h2>
+  <h1>Contact Us</h1>
+  <p style="text-align:center; margin-top:15px;">Need help with the feedback system? Reach out to our support team or share ideas for improving the canteen.</p>
+  <div style="margin-top:20px; background: rgba(255,255,255,0.2); border-radius:12px; padding:15px; color:white;">
+    <h2 style="text-align:center;">Get Support</h2>
+    <ul style="margin-top:10px;">
+      <li><i class="fa fa-envelope"></i> Email: sunrise@canteen.com</li>
+      <li><i class="fa fa-phone"></i> Phone: +91 90969 95212</li>
+      <li><i class="fa fa-clock"></i> Working Hours: Mon-Fri, 8:30 AM - 5:30 PM</li>
+    </ul>
+    <p style="margin-top:10px;">For urgent issues, ask your teacher or canteen coordinator to open this page and share details.</p>
+  </div>
+  <div style="margin-top:20px; text-align:center;">
+    <a href="index.html" class="nav-link">Back to Feedback</a>
+  </div>
+</div>
+<script>
+function applyThemeFromStorage() {
+  const isDark = localStorage.getItem('theme') !== 'light';
+  document.body.classList.toggle('dark-mode', isDark);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+}
+function toggleThemeFromStorage() {
+  const current = localStorage.getItem('theme') || 'dark';
+  localStorage.setItem('theme', current === 'dark' ? 'light' : 'dark');
+  applyThemeFromStorage();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  applyThemeFromStorage();
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', toggleThemeFromStorage);
+});
+</script>
+</body>
+</html>
