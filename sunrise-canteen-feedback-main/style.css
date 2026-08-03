@@ -1,0 +1,316 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#667eea,#764ba2);
+min-height:100vh;
+display:flex;
+justify-content:center;
+padding:20px;
+color:white;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+width:100%;
+max-width:1100px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:35px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation:fadeIn 0.7s;
+}
+
+h1,h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* TOP NAV */
+
+.top-nav{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:15px;
+  flex-wrap:wrap;
+}
+
+.nav-link{
+  color:white;
+  text-decoration:none;
+  background:rgba(255,255,255,0.2);
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:600;
+  border:1px solid #fff5;
+  transition:0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+  background:white;
+  color:#764ba2;
+  border-color:#fff;
+}
+
+/* ROLE BUTTONS */
+
+.role-selector{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:25px;
+flex-wrap:wrap;
+}
+
+.role-btn{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+background:rgba(255,255,255,0.25);
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+.role-btn:hover{
+transform:translateY(-3px);
+}
+
+.role-btn.active{
+background:white;
+color:#764ba2;
+}
+
+/* FORM */
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.25);
+color:white;
+font-size:16px;
+}
+
+/* FOOD GRID */
+
+.food-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
+margin-top:15px;
+}
+
+.food-card{
+background:rgba(255,255,255,0.2);
+border-radius:15px;
+padding:15px;
+text-align:center;
+transition:0.3s;
+}
+
+.food-card:hover{
+transform:translateY(-6px) scale(1.03);
+}
+
+.food-img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:6px;
+}
+
+/* STARS */
+
+.star-rating{
+display:flex;
+flex-direction:row-reverse;
+justify-content:center;
+}
+
+.star-rating input{
+display:none;
+}
+
+.star-rating label{
+font-size:20px;
+color:#ccc;
+cursor:pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label{
+color:gold;
+}
+
+/* BUTTON */
+
+button.submit{
+width:100%;
+padding:12px;
+margin-top:20px;
+border:none;
+border-radius:10px;
+background:#ff9a9e;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button.submit:hover{
+transform:scale(1.05);
+}
+
+.theme-btn{
+border:none;
+border-radius:8px;
+padding:8px 12px;
+font-weight:600;
+background:rgba(255,255,255,0.2);
+color:white;
+cursor:pointer;
+margin-left:8px;
+}
+
+.theme-btn:hover{background:rgba(255,255,255,0.35);}
+
+.download-btn{
+border:none;
+border-radius:8px;
+padding:10px 14px;
+font-weight:600;
+background:#fff;
+color:#764ba2;
+cursor:pointer;
+margin-top:12px;
+}
+
+.download-btn:hover{background:#f7f7f7;}
+
+/* ADMIN BUTTON */
+
+.admin-btn{
+margin-top:20px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+width:100%;
+font-size:15px;
+}
+
+/* SUCCESS */
+
+.success{
+display:none;
+background:#2ecc71;
+text-align:center;
+padding:10px;
+border-radius:10px;
+margin-top:10px;
+}
+
+/* ADMIN TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+color:black;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:8px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+.container{
+padding:20px;
+}
+
+.food-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.food-img{
+width:70px;
+height:70px;
+}
+
+}
+
+@media(max-width:480px){
+
+.food-grid{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:24px;
+}
+
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #2a2b3c, #1f2233);
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background: rgba(20, 22, 34, 0.9);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-link {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f3f4ff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  background: #fff;
+  color: #3c2f76;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .food-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

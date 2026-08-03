@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works - Canteen Feedback</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <nav class="top-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="how-it-works.html" class="nav-link active">How It Works</a>
+    <button id="themeToggle" class="theme-btn">Dark Mode</button>
+  </nav>
+  <h2 style="color:#fff; text-align:center; margin: 10px 0 20px;">🌟 Sunrise Canteen</h2>
+  <h1>How It Works</h1>
+  <div style="margin-top:15px; color:white;">
+    <p>Use the feedback form to rate food items and canteen experience. Your feedback is saved securely in Firebase and shown to admins on demand.</p>
+    <ol style="margin-left:20px; margin-top:10px;">
+      <li>Choose Student or Teacher role.</li>
+      <li>Rate canteen areas and each food item using stars.</li>
+      <li>Add a comment and submit.</li>
+      <li>Admin can open dashboard to see total counts and averages.</li>
+    </ol>
+  </div>
+  <div style="margin-top:20px; text-align:center;">
+    <a href="index.html" class="nav-link">Back to Feedback</a>
+  </div>
+</div>
+<script>
+function applyThemeFromStorage() {
+  const isDark = localStorage.getItem('theme') !== 'light';
+  document.body.classList.toggle('dark-mode', isDark);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+}
+function toggleThemeFromStorage() {
+  const current = localStorage.getItem('theme') || 'dark';
+  localStorage.setItem('theme', current === 'dark' ? 'light' : 'dark');
+  applyThemeFromStorage();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  applyThemeFromStorage();
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', toggleThemeFromStorage);
+});
+</script>
+</body>
+</html>
